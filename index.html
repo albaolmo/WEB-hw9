@@ -1,0 +1,13 @@
+<html>
+   <head></head>
+   <body>
+      <div><p id="data"></p></div>
+   </body>
+<script type="text/javascript">
+
+    var es = new EventSource("http://localhost:80");
+es.onmessage = function (event) {
+  document.getElementById("data").innerHTML += '<h4>' + event.data + '</h4>';
+};
+</script>
+<html>
